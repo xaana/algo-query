@@ -13,4 +13,12 @@
     font-size: 1em;
     padding: 0.25em 0;
   }
+
+  & :global(.ant-menu-item-selected) {
+    color: #ffffff;
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
 }

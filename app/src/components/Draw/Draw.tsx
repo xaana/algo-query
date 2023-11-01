@@ -192,7 +192,7 @@ export default function Draw({
       </Popover>
       <ReactECharts
         // ref={chartRef}
-        theme={'dark'}
+        theme={'light'}
         option={options2}
         // notMerge={true}
         // lazyUpdate={true}

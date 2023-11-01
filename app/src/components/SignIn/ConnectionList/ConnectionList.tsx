@@ -31,7 +31,7 @@ export default class ConnectionList extends React.Component<Props> {
 
     return (
       <Menu
-        theme="dark"
+        theme="light"
         mode="inline"
         selectedKeys={selectedKeys}
         onSelect={this.onSelect}

@@ -63,7 +63,7 @@ const devServer = {
 
   historyApiFallback: true,
   host: devServerHost,
-  port: 9000,
+  port: 9090,
   compress: true,
   hot: true,
   liveReload: true,
@@ -211,7 +211,7 @@ let common = {
             loader: 'less-loader',
             options: {
               javascriptEnabled: true,
-              modifyVars: merge(getThemeVariables({ dark: true, compact: true }), antdLessVars),
+              modifyVars: merge(getThemeVariables({ dark: false, compact: true }), antdLessVars),
             },
           },
         ],

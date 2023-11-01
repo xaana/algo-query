@@ -12,7 +12,7 @@ export enum ActionType {
 
 export default function ContextMenu(props: MenuProps) {
   return (
-    <Menu theme="dark" mode="vertical" {...props}>
+    <Menu theme="light" mode="vertical" {...props}>
       <Menu.Item key={ActionType.Settings} disabled>
         <SettingOutlined />
         <span>Settings</span>

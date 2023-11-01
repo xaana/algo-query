@@ -212,8 +212,8 @@ const palette = getPalette('colorful');
 const newPalette = generatePalette({ ...palette, brandColor: themeColor });
 export const themeCfg: ThemeCfg = {
   name: 'gray',
-  theme: DarkTheme,
-  palette: newPalette,
+  // theme: DarkTheme,
+  // palette: newPalette,
 };
 
 // Try translate

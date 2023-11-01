@@ -13,7 +13,7 @@ import {
 import { Event as CanvasEvent } from '@antv/g-canvas';
 import { SheetComponent as S2Table } from '@antv/s2-react';
 import '@antv/s2-react/dist/style.min.css';
-import './dark.css';
+// import './dark.css';
 import { SheetTooltip } from './SheetTooltip';
 import DataDecorator from 'services/api/DataDecorator';
 import { SheetType } from '@antv/s2-react/esm/components/sheets/interface';

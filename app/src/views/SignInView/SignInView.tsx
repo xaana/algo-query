@@ -64,17 +64,7 @@ class SignInView extends React.Component<RoutedProps> {
     const { store } = this.props;
     return (
       <div style={{ textAlign: 'center' }}>
-        Tabix ©{new Date().getFullYear()} Version: {store.getCurrentVersionTabix()}&nbsp;
-        {store.tbxUpdate.needUpdate ? (
-          <Badge count={<ClockCircleOutlined style={{ color: '#f5222d' }} />}>
-            ,
-            <a target="_blank" href={store.tbxUpdate.link} rel="noreferrer">
-              Update new version {store.tbxUpdate.newVersion}
-            </a>
-          </Badge>
-        ) : (
-          'is last'
-        )}
+        Turium Tabix
       </div>
     );
   }
@@ -116,8 +106,8 @@ class SignInView extends React.Component<RoutedProps> {
                   <a href="https://tabix.io/" target="_blank" rel="noreferrer">
                     <img
                       className={css.logoimg}
-                      src="https://tabix.io/img/tabixLogo-IconText-DB7315.png?v=22.05&p=sign"
-                      alt="Tabix LOGO"
+                      src="https://static.wixstatic.com/media/473180_9db885c0ccfb4cbaae83baef715f0974~mv2.png/v1/fill/w_313,h_175,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Turium%20Logo%20-%20Brain%20Above%20-%20Black.png"
+                      alt="Turium Logo"
                     />
                   </a>
                   <Divider />
@@ -185,42 +175,6 @@ class SignInView extends React.Component<RoutedProps> {
                     {/*  )}*/}
                     {/*</Tabs.TabPane>*/}
                   </Tabs>
-                </Row>
-                <Row>
-                  <Divider />
-
-                  <Timeline>
-                    <Timeline.Item>
-                      <SmileOutlined />
-                      &nbsp;&nbsp;
-                      <a href="https://tabix.io/doc/Connection/" target="_blank" rel="noreferrer">
-                        Docs & <b>Help</b> connection
-                      </a>
-                    </Timeline.Item>
-                    <Timeline.Item>
-                      <GithubOutlined />
-                      &nbsp;&nbsp;
-                      <a href="https://github.com/tabixio/tabix" target="_blank" rel="noreferrer">
-                        Make <b>star</b> on GitHub
-                      </a>
-                      &nbsp;&nbsp;
-                      <StarOutlined />
-                    </Timeline.Item>
-                    {/*<Timeline.Item>*/}
-                    {/*  <FontSizeOutlined />*/}
-                    {/*  &nbsp;*/}
-                    {/*  <a href="https://t.me/tabix_io" target="_blank" rel="noreferrer">*/}
-                    {/*    Subscribe <b>telegram</b> chanel*/}
-                    {/*  </a>*/}
-                    {/*</Timeline.Item>*/}
-                    <Timeline.Item>
-                      <TwitterOutlined />
-                      &nbsp;&nbsp;
-                      <a href="https://twitter.com/tabix_io" target="_blank" rel="noreferrer">
-                        Subscribe in <b>twitter</b>
-                      </a>
-                    </Timeline.Item>
-                  </Timeline>
                 </Row>
                 <Row>
                   <Divider />

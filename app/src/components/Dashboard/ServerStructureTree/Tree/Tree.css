@@ -11,7 +11,7 @@
   user-select: none;
 
   &.selected {
-    background-color: #0d293e;
+    background-color: #d1d5db;
   }
 
   &.highlighted {
