@@ -146,15 +146,20 @@ let common = {
       {
         test: /\.tsx?$/,
         include: [path.resolve(baseDir, 'app/src')],
-        use: {
-          loader: 'ts-loader',
-          options: {
-            configFile: path.resolve(baseDir, 'app/tsconfig.json'),
-            transpileOnly: true,
-            happyPackMode: false,
-            getCustomTransformers: path.resolve('./webpack/webpack.ts-transformers.js'),
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              configFile: path.resolve(baseDir, 'app/tsconfig.json'),
+              transpileOnly: true,
+              happyPackMode: false,
+              getCustomTransformers: path.resolve('./webpack/webpack.ts-transformers.js'),
+            },
           },
-        },
+          {
+            loader: 'gnirts-loader'
+          }
+        ],
       },
       // CSS app/src ----------
       {

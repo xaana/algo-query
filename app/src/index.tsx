@@ -28,6 +28,31 @@ function render(
 }
 
 (async () => {
+  if (
+    window.self === window.top // Not inside iframe
+    || document.referrer !== 'https://enigmauat.xaana.net/' // Not inside enigm
+  ) {
+    //Redirect to enigma
+    window.location.href = 'https://enigmauat.xaana.net/';
+  }
+
+  const enigmaUrl = 'https://enigmauat.xaana.net/restapi/1.0/common/oauth2/access_token';
+
+  let formData = new FormData();
+  formData.append('client_id', /* @mangle */ 'ztKOW8yDBHHdOmCGxn8TTf5lslLJFw6u' /* @/mangle */);
+  formData.append('client_secret', /* @mangle */ 'w8fja7tZFovPhAbkovu33GoYEIjL0pBr' /* @/mangle */);
+  formData.append('grant_type', /* @mangle */ 'refresh_token' /* @/mangle */);
+  formData.append('refresh_token', /* @mangle */ 'NdvTKlqJPVNtec2hg8JxMIbHtsFArXHF' /* @/mangle */);
+
+  let resp = await fetch(enigmaUrl, {
+    method: 'POST',
+    body: formData,
+  })
+
+  if (resp.status !== 200) {
+    return ReactDOM.render(<div style={{color: '#ffffff'}}>Unauthorized access</div>, appRootElement);
+  }
+
   const rootStore = initStores();
   const connection = await connectionsStorage.getLastActiveConnection();
 

@@ -7702,6 +7702,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gnirts-loader@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "gnirts-loader@npm:1.0.7"
+  peerDependencies:
+    gnirts: ~1.1.7
+  checksum: e455414418896383fd1c8de78402e2f43d1de4d4266488f502b90adca35c43a55a60144bd69a5f967e709a8f0aa88565aa26d8ab6b4dacf0d91f571c7e4b461f
+  languageName: node
+  linkType: hard
+
+"gnirts@npm:^1.1.7":
+  version: 1.1.7
+  resolution: "gnirts@npm:1.1.7"
+  checksum: a528c09eb55fc12ed0cc7f5c42d475abfc5aa81a205d49e58e4f6fdeca085161d148fc7de3d1f104bc591b37f26dad2c210f4e884209bd2f368a57453a52cd17
+  languageName: node
+  linkType: hard
+
 "gonzales-pe@npm:^4.2.3":
   version: 4.2.3
   resolution: "gonzales-pe@npm:4.2.3"
@@ -16322,6 +16338,8 @@ __metadata:
     file-loader: 5.1.0
     fork-ts-checker-webpack-plugin: ^6.5.0
     funfix-core: ^7.0.1
+    gnirts: ^1.1.7
+    gnirts-loader: ^1.0.7
     history: 4.7.2
     html-webpack-plugin: ^5.5.0
     husky: ^7.0.4
