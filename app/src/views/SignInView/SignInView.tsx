@@ -64,7 +64,7 @@ class SignInView extends React.Component<RoutedProps> {
     const { store } = this.props;
     return (
       <div style={{ textAlign: 'center' }}>
-        Turium Tabix
+        Turium AlgoQuery
       </div>
     );
   }
@@ -91,7 +91,8 @@ class SignInView extends React.Component<RoutedProps> {
 
   render() {
     const { store } = this.props;
-    //pass:checkVersionUpdateTabix123
+    const url = document.referrer || 'https://enigmadev.xaana.net';
+
     return (
       <Page column={false} uiStore={store.uiStore}>
         <Splitter>
@@ -103,7 +104,7 @@ class SignInView extends React.Component<RoutedProps> {
                   align="middle"
                   justify="center"
                 >
-                  <a href="https://tabix.io/" target="_blank" rel="noreferrer">
+                  <a href={url} target="_blank" rel="noreferrer">
                     <img
                       className={css.logoimg}
                       src="https://static.wixstatic.com/media/473180_9db885c0ccfb4cbaae83baef715f0974~mv2.png/v1/fill/w_313,h_175,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Turium%20Logo%20-%20Brain%20Above%20-%20Black.png"

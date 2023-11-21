@@ -1,10 +1,11 @@
 import * as connectionsStorage from './connectionsStorage';
+import * as enigma from './enigma';
 import * as sqlHistoryStorage from './sqlHistoryStorage';
 
 import * as tabsStorage from './tabsStorage';
 export { default as TabixUpdate } from './TabixUpdate';
 
-export { connectionsStorage, sqlHistoryStorage, tabsStorage };
+export { connectionsStorage, enigma, sqlHistoryStorage, tabsStorage };
 export { default as Connection } from './Connection';
 export * from './Connection';
 export { default as Api } from './api/Api';

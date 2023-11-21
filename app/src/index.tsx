@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { supportsHistory } from 'history/DOMUtils';
 import { Provider } from 'mobx-react';
 import { initStores } from 'stores';
-import { connectionsStorage } from 'services';
+import { connectionsStorage, enigma } from 'services';
 import App, { AppProps } from 'views/App';
 
 const appRootElement = document.getElementById('root')!;
@@ -27,31 +27,22 @@ function render(
   );
 }
 
+const unauthorized = <div style={{color: '#ffffff'}}>Unauthorized access</div>;
+
 (async () => {
   if (
     window.self === window.top // Not inside iframe
-    || document.referrer !== 'https://enigmauat.xaana.net/' // Not inside enigm
   ) {
-    //Redirect to enigma
-    window.location.href = 'https://enigmauat.xaana.net/';
+    return ReactDOM.render(unauthorized, appRootElement);
   }
 
-  const enigmaUrl = 'https://enigmauat.xaana.net/restapi/1.0/common/oauth2/access_token';
+  // const enigmaUrl = new URL(document.referrer);
+  const baseUrl = 'https://enigmadev.xaana.net'; // `${enigmaUrl.protocol}:\\${enigmaUrl.host}`;
 
-  let formData = new FormData();
-  formData.append('client_id', /* @mangle */ 'ztKOW8yDBHHdOmCGxn8TTf5lslLJFw6u' /* @/mangle */);
-  formData.append('client_secret', /* @mangle */ 'w8fja7tZFovPhAbkovu33GoYEIjL0pBr' /* @/mangle */);
-  formData.append('grant_type', /* @mangle */ 'refresh_token' /* @/mangle */);
-  formData.append('refresh_token', /* @mangle */ 'NdvTKlqJPVNtec2hg8JxMIbHtsFArXHF' /* @/mangle */);
+  // const params = new URLSearchParams(window.location.search);
+  const accessToken = 'aabcde'; // params.get('access_token')?? '';
 
-  let resp = await fetch(enigmaUrl, {
-    method: 'POST',
-    body: formData,
-  })
-
-  if (resp.status !== 200) {
-    return ReactDOM.render(<div style={{color: '#ffffff'}}>Unauthorized access</div>, appRootElement);
-  }
+  await enigma.init(baseUrl, accessToken);
 
   const rootStore = initStores();
   const connection = await connectionsStorage.getLastActiveConnection();
