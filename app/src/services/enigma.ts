@@ -16,7 +16,7 @@ export async function init(baseUrl: string, accessToken: string) {
     let connections: Connection[] = [
         {
             connectionName: 'defaultConn',
-            connectionUrl: 'https://clickhouse-db-1.algoreus.net',
+            connectionUrl: 'https://algohouse-db-1.algoreus.net',
             username: 'default',
             password: 'xaana@2023@@$$',
             version: '',
